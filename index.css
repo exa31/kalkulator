@@ -5,8 +5,11 @@
     padding: 0;
     margin: 0;
 }
+
 .konten {
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(to bottom left, rgb(27, 255, 50), rgb(33, 33, 255));
     display: flex;
 }
