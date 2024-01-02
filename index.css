@@ -1,0 +1,88 @@
+*{
+    font-size: 30px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.konten {
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom left, rgb(27, 255, 50), rgb(33, 33, 255));
+    display: flex;
+}
+.kalkulator {
+    text-align: center;
+    background-color: rgb(78, 77, 77);
+    margin-top: 10px;
+    border-radius: 5%;
+    position: relative;
+    margin-bottom: 20px;
+}
+.display {
+    width: 300px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    text-align: right;
+    padding: 20px;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+.view {
+    overflow: hidden;
+    font-size: 30px;
+}
+.history {
+    overflow: hidden;
+    font-size: 25px;
+    opacity: 0.4;
+}
+.hasil-belum-pasti {
+    text-align: start;
+    opacity: 0.4;
+    font-size: 25px;
+    position: absolute;
+    left: 10;
+    bottom: 0;
+}
+.button-isi {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    margin: 10px ;
+    align-items: center;
+} 
+.button {
+    width: 60px;
+    height: 60px;
+    color: antiquewhite;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.button.btn-0{
+    
+    width: auto;
+    border-radius: 50px;
+    grid-column: 2 span;
+    
+
+}
+.button:hover{
+    background-color: rgba(0, 0, 0, 0.192);
+}   
+.button.operasi {
+    color: rgb(255, 128, 0);
+    background-color: rgb(255, 255, 255);
+}
+.button.operasi:hover {
+    background-color: rgba(255, 255, 255, 0.100);
+}
