@@ -11,6 +11,7 @@ let dis2num="";
 let hasill=null;
 let lastOperation="";
 let haveDot=false;
+let checkHasil=false
 
 numbers.forEach((number) => {
     number.addEventListener("click",(e)=>{
@@ -20,7 +21,9 @@ numbers.forEach((number) => {
             haveDot = true;
         } else if (e.target.innerText === "." && haveDot) {
             return;
-        }
+        } 
+        
+        checkHasil=false
         dis2num += e.target.innerText;
         view.innerText =dis2num;
     })
@@ -45,6 +48,7 @@ function clearVar(name = "") {
     view.innerText = "" ;
     dis2num = "";
     hasilShadow.innerText = hasill;
+    checkHasil=false
 }
 function mathOperation () {
     if (lastOperation === "x") {
@@ -62,13 +66,19 @@ function mathOperation () {
 
 hasil.addEventListener('click' , (e) => {
     if (!dis1num || !dis2num) return;
-    haveDot = false;
+    haveDot = true;
     mathOperation();
     clearVar();
     view.innerText = hasill;
     hasilShadow.innerText = "";
     dis2num = hasill;
     dis1num = "";
+    checkHasil = true
+    if (mathOperation === 0) {
+        view = "0"
+        dis2num = ""
+    }
+    if (hasil.innerText === "." && haveDot) return
 })
 
 clearAll.addEventListener("click" , () => {
@@ -79,11 +89,14 @@ clearAll.addEventListener("click" , () => {
     hasilShadow.innerText = "0";
     history.innerText = "0";
     hasill = "";
+    checkHasil=false
 })
 
-clearLast.addEventListener("click" , () => {
-    view.innerText = "0";
-    dis2num = "";
+clearLast.addEventListener("click" , (e) => {
+    if (!checkHasil) {
+        view.innerText = "0";
+        dis2num = "";
+    }
 })
 
 window.addEventListener ("keydown" , (e) => {
